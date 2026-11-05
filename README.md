@@ -7,6 +7,8 @@
 
 기준: SAP S/4HANA 온프레미스/Private Edition 2023 이후, SAPUI5/OpenUI5 1.120.
 
+**바로 보기**: https://ldh106.github.io/sap-s4hana-module-course/ (코스 · 런치패드)
+
 ## 들어 있는 것
 
 | 폴더 | 내용 | 눈여겨볼 UI5 기능 |

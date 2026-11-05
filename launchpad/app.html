@@ -10,7 +10,8 @@
         #app { height: calc(100% - 3rem); }
     </style>
     <!-- 앱 하나를 런치패드 안에서 띄우는 페이지. ?app=so-json 처럼 부릅니다.
-         각 앱 폴더(apps/*/webapp)를 resource root로 등록해 Component를 불러옵니다. -->
+         각 앱 폴더(apps/*/webapp)를 resource root로 등록해 Component를 불러옵니다.
+         빌드하지 않은 소스를 그대로 올렸으므로 Component-preload.js(묶음 파일)는 찾지 않게 합니다. -->
     <script
         id="sap-ui-bootstrap"
         src="https://sdk.openui5.org/1.120/resources/sap-ui-core.js"
@@ -28,6 +29,7 @@
         data-sap-ui-compat-version="edge"
         data-sap-ui-async="true"
         data-sap-ui-frame-options="trusted"
+        data-sap-ui-xx-component-preload="off"
     ></script>
 </head>
 <body class="sapUiBody sapUiSizeCompact">
