@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  API_SALES_ORDER_SRV (OData V2)의 일부만 옮긴 교육용 메타데이터입니다.
+  - 엔터티·속성·내비게이션 이름은 실제 서비스와 같습니다 (SAP Cloud SDK의 서비스 정의로 확인).
+  - 실제 서비스에는 속성이 훨씬 많고(A_SalesOrder만 80개가 넘음), 엔터티도 파트너·가격 요소·텍스트 등이 더 있습니다.
+  - 이 앱에 필요한 것만 남겼습니다.
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+  <edmx:DataServices m:DataServiceVersion="2.0">
+    <Schema Namespace="API_SALES_ORDER_SRV" xml:lang="ko" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+      <EntityType Name="A_SalesOrderType" sap:label="판매오더" sap:content-version="1">
+        <Key><PropertyRef Name="SalesOrder"/></Key>
+        <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="판매 문서"/>
+        <Property Name="SalesOrderType" Type="Edm.String" MaxLength="4" sap:label="판매 문서 유형"/>
+        <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:label="판매조직"/>
+        <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:label="유통경로"/>
+        <Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2" sap:label="제품군"/>
+        <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:label="판매처"/>
+        <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="생성일"/>
+        <Property Name="SalesOrderDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="문서 일자"/>
+        <Property Name="PurchaseOrderByCustomer" Type="Edm.String" MaxLength="35" sap:label="고객 참조"/>
+        <Property Name="RequestedDeliveryDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="희망 납기"/>
+        <Property Name="TotalNetAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="TransactionCurrency" sap:label="순금액"/>
+        <Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5" sap:semantics="currency-code" sap:label="문서 통화"/>
+        <Property Name="CustomerPaymentTerms" Type="Edm.String" MaxLength="4" sap:label="지급조건"/>
+        <Property Name="IncotermsClassification" Type="Edm.String" MaxLength="3" sap:label="인코텀즈"/>
+        <Property Name="OverallSDProcessStatus" Type="Edm.String" MaxLength="1" sap:label="전체 처리 상태"/>
+        <Property Name="OverallDeliveryStatus" Type="Edm.String" MaxLength="1" sap:label="납품 상태"/>
+        <NavigationProperty Name="to_Item" Relationship="API_SALES_ORDER_SRV.assoc_SalesOrder_Item" FromRole="FromRole_SalesOrder_Item" ToRole="ToRole_SalesOrder_Item"/>
+        <NavigationProperty Name="to_SubsequentProcFlowDoc" Relationship="API_SALES_ORDER_SRV.assoc_SalesOrder_SubsqntProcFlow" FromRole="FromRole_SalesOrder_Flow" ToRole="ToRole_SalesOrder_Flow"/>
+      </EntityType>
+
+      <EntityType Name="A_SalesOrderItemType" sap:label="판매오더 아이템" sap:content-version="1">
+        <Key><PropertyRef Name="SalesOrder"/><PropertyRef Name="SalesOrderItem"/></Key>
+        <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="판매 문서"/>
+        <Property Name="SalesOrderItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="아이템"/>
+        <Property Name="SalesOrderItemCategory" Type="Edm.String" MaxLength="4" sap:label="품목 범주"/>
+        <Property Name="SalesOrderItemText" Type="Edm.String" MaxLength="40" sap:label="아이템 내역"/>
+        <Property Name="Material" Type="Edm.String" MaxLength="40" sap:label="자재"/>
+        <Property Name="RequestedQuantity" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="RequestedQuantityUnit" sap:label="주문 수량"/>
+        <Property Name="RequestedQuantityUnit" Type="Edm.String" MaxLength="3" sap:semantics="unit-of-measure" sap:label="판매 단위"/>
+        <Property Name="NetAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="TransactionCurrency" sap:label="순금액"/>
+        <Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5" sap:semantics="currency-code" sap:label="통화"/>
+        <Property Name="ProductionPlant" Type="Edm.String" MaxLength="4" sap:label="플랜트"/>
+        <Property Name="SDProcessStatus" Type="Edm.String" MaxLength="1" sap:label="처리 상태"/>
+        <NavigationProperty Name="to_SalesOrder" Relationship="API_SALES_ORDER_SRV.assoc_SalesOrder_Item" FromRole="ToRole_SalesOrder_Item" ToRole="FromRole_SalesOrder_Item"/>
+      </EntityType>
+
+      <EntityType Name="A_SalesOrderSubsqntProcFlowType" sap:label="판매오더 후속 문서" sap:content-version="1">
+        <Key><PropertyRef Name="SalesOrder"/><PropertyRef Name="DocRelationshipUUID"/></Key>
+        <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="판매 문서"/>
+        <Property Name="DocRelationshipUUID" Type="Edm.Guid" Nullable="false" sap:label="문서 관계 UUID"/>
+        <Property Name="SubsequentDocument" Type="Edm.String" MaxLength="10" sap:label="후속 문서"/>
+        <Property Name="SubsequentDocumentCategory" Type="Edm.String" MaxLength="4" sap:label="후속 문서 범주"/>
+        <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="생성일"/>
+        <NavigationProperty Name="to_SalesOrder" Relationship="API_SALES_ORDER_SRV.assoc_SalesOrder_SubsqntProcFlow" FromRole="ToRole_SalesOrder_Flow" ToRole="FromRole_SalesOrder_Flow"/>
+      </EntityType>
+
+      <Association Name="assoc_SalesOrder_Item" sap:content-version="1">
+        <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_SalesOrder_Item"/>
+        <End Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="*" Role="ToRole_SalesOrder_Item"/>
+        <ReferentialConstraint>
+          <Principal Role="FromRole_SalesOrder_Item"><PropertyRef Name="SalesOrder"/></Principal>
+          <Dependent Role="ToRole_SalesOrder_Item"><PropertyRef Name="SalesOrder"/></Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="assoc_SalesOrder_SubsqntProcFlow" sap:content-version="1">
+        <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_SalesOrder_Flow"/>
+        <End Type="API_SALES_ORDER_SRV.A_SalesOrderSubsqntProcFlowType" Multiplicity="*" Role="ToRole_SalesOrder_Flow"/>
+        <ReferentialConstraint>
+          <Principal Role="FromRole_SalesOrder_Flow"><PropertyRef Name="SalesOrder"/></Principal>
+          <Dependent Role="ToRole_SalesOrder_Flow"><PropertyRef Name="SalesOrder"/></Dependent>
+        </ReferentialConstraint>
+      </Association>
+
+      <EntityContainer Name="API_SALES_ORDER_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+        <EntitySet Name="A_SalesOrder" EntityType="API_SALES_ORDER_SRV.A_SalesOrderType" sap:content-version="1"/>
+        <EntitySet Name="A_SalesOrderItem" EntityType="API_SALES_ORDER_SRV.A_SalesOrderItemType" sap:content-version="1"/>
+        <EntitySet Name="A_SalesOrderSubsqntProcFlow" EntityType="API_SALES_ORDER_SRV.A_SalesOrderSubsqntProcFlowType" sap:content-version="1"/>
+        <AssociationSet Name="assoc_SalesOrder_Item" Association="API_SALES_ORDER_SRV.assoc_SalesOrder_Item" sap:content-version="1">
+          <End EntitySet="A_SalesOrder" Role="FromRole_SalesOrder_Item"/>
+          <End EntitySet="A_SalesOrderItem" Role="ToRole_SalesOrder_Item"/>
+        </AssociationSet>
+        <AssociationSet Name="assoc_SalesOrder_SubsqntProcFlow" Association="API_SALES_ORDER_SRV.assoc_SalesOrder_SubsqntProcFlow" sap:content-version="1">
+          <End EntitySet="A_SalesOrder" Role="FromRole_SalesOrder_Flow"/>
+          <End EntitySet="A_SalesOrderSubsqntProcFlow" Role="ToRole_SalesOrder_Flow"/>
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

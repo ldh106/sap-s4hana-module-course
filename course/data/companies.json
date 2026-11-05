@@ -1,0 +1,9 @@
+[
+  {
+    "id": "gaon",
+    "name": "가온전자(주)",
+    "industry": "소형 가전 제조 (공기청정기·가습기·주방가전)",
+    "file": "data/gaon.json",
+    "schema": "sap-edu-company/1"
+  }
+]

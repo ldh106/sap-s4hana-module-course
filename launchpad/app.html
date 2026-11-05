@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가온전자 Fiori 앱</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        #shell { height: 3rem; }
+        #app { height: calc(100% - 3rem); }
+    </style>
+    <!-- 앱 하나를 런치패드 안에서 띄우는 페이지. ?app=so-json 처럼 부릅니다.
+         각 앱 폴더(apps/*/webapp)를 resource root로 등록해 Component를 불러옵니다. -->
+    <script
+        id="sap-ui-bootstrap"
+        src="https://sdk.openui5.org/1.120/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-language="ko"
+        data-sap-ui-libs="sap.m,sap.f"
+        data-sap-ui-resource-roots='{
+            "gaon.launchpad": "./",
+            "gaon.sojson": "../apps/so-json/webapp",
+            "gaon.soodata": "../apps/so-odata/webapp",
+            "gaon.bp": "../apps/bp/webapp",
+            "gaon.je": "../apps/je/webapp"
+        }'
+        data-sap-ui-on-init="module:gaon/launchpad/run"
+        data-sap-ui-compat-version="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frame-options="trusted"
+    ></script>
+</head>
+<body class="sapUiBody sapUiSizeCompact">
+    <div id="shell"></div>
+    <div id="app"></div>
+</body>
+</html>

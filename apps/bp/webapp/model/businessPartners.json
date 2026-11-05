@@ -1,0 +1,1830 @@
+{
+ "A_BusinessPartner": [
+  {
+   "BusinessPartner": "1000010",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "누리가전마트",
+   "BusinessPartnerFullName": "누리가전마트",
+   "SearchTerm1": "누리가전마트",
+   "Customer": "1000010",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000010",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000010",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000010",
+     "AddressID": "1",
+     "CityName": "서울",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000010",
+    "CustomerName": "누리가전마트",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000010",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000010",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     },
+     {
+      "Customer": "1000010",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 27,
+    "salesAmountKRW": 344157000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 121737000
+   }
+  },
+  {
+   "BusinessPartner": "1000011",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "다솜전자유통",
+   "BusinessPartnerFullName": "다솜전자유통",
+   "SearchTerm1": "다솜전자유통",
+   "Customer": "1000011",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000011",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000011",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000011",
+     "AddressID": "1",
+     "CityName": "부산",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000011",
+    "CustomerName": "다솜전자유통",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000011",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT45"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000011",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT45",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     },
+     {
+      "Customer": "1000011",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT45",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 22,
+    "salesAmountKRW": 296280000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 158098600
+   }
+  },
+  {
+   "BusinessPartner": "1000012",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "바름리빙",
+   "BusinessPartnerFullName": "바름리빙",
+   "SearchTerm1": "바름리빙",
+   "Customer": "1000012",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000012",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000012",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000012",
+     "AddressID": "1",
+     "CityName": "대구",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000012",
+    "CustomerName": "바름리빙",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000012",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000012",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 11,
+    "salesAmountKRW": 118454000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 10062800
+   }
+  },
+  {
+   "BusinessPartner": "1000013",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "새봄종합상사",
+   "BusinessPartnerFullName": "새봄종합상사",
+   "SearchTerm1": "새봄종합상사",
+   "Customer": "1000013",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000013",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000013",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000013",
+     "AddressID": "1",
+     "CityName": "광주",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000013",
+    "CustomerName": "새봄종합상사",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000013",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000013",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     },
+     {
+      "Customer": "1000013",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 23,
+    "salesAmountKRW": 302134000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 233546500
+   }
+  },
+  {
+   "BusinessPartner": "1000014",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "가람홈플라자",
+   "BusinessPartnerFullName": "가람홈플라자",
+   "SearchTerm1": "가람홈플라자",
+   "Customer": "1000014",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000014",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000014",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000014",
+     "AddressID": "1",
+     "CityName": "대전",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000014",
+    "CustomerName": "가람홈플라자",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000014",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000014",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 10,
+    "salesAmountKRW": 116014000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 36527700
+   }
+  },
+  {
+   "BusinessPartner": "1000015",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "푸른가전",
+   "BusinessPartnerFullName": "푸른가전",
+   "SearchTerm1": "푸른가전",
+   "Customer": "1000015",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000015",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000015",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000015",
+     "AddressID": "1",
+     "CityName": "인천",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000015",
+    "CustomerName": "푸른가전",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000015",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT45"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000015",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT45",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     },
+     {
+      "Customer": "1000015",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT45",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 11,
+    "salesAmountKRW": 164972000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 73681300
+   }
+  },
+  {
+   "BusinessPartner": "1000016",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "한울전자상가",
+   "BusinessPartnerFullName": "한울전자상가",
+   "SearchTerm1": "한울전자상가",
+   "Customer": "1000016",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000016",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000016",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000016",
+     "AddressID": "1",
+     "CityName": "수원",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000016",
+    "CustomerName": "한울전자상가",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000016",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000016",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     },
+     {
+      "Customer": "1000016",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 16,
+    "salesAmountKRW": 165017000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 61341500
+   }
+  },
+  {
+   "BusinessPartner": "1000017",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "이음생활마트",
+   "BusinessPartnerFullName": "이음생활마트",
+   "SearchTerm1": "이음생활마트",
+   "Customer": "1000017",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000017",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000017",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000017",
+     "AddressID": "1",
+     "CityName": "청주",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000017",
+    "CustomerName": "이음생활마트",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000017",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000017",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 6,
+    "salesAmountKRW": 60285000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 5588000
+   }
+  },
+  {
+   "BusinessPartner": "1000018",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "모아리빙센터",
+   "BusinessPartnerFullName": "모아리빙센터",
+   "SearchTerm1": "모아리빙센터",
+   "Customer": "1000018",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000018",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000018",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000018",
+     "AddressID": "1",
+     "CityName": "창원",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000018",
+    "CustomerName": "모아리빙센터",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000018",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000018",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 2,
+    "salesAmountKRW": 15503000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 17053300
+   }
+  },
+  {
+   "BusinessPartner": "1000019",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "하늘상사",
+   "BusinessPartnerFullName": "하늘상사",
+   "SearchTerm1": "하늘상사",
+   "Customer": "1000019",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000019",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000019",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000019",
+     "AddressID": "1",
+     "CityName": "울산",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000019",
+    "CustomerName": "하늘상사",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000019",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000019",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     },
+     {
+      "Customer": "1000019",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "01"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 6,
+    "salesAmountKRW": 90527000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 72971800
+   }
+  },
+  {
+   "BusinessPartner": "1000020",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "온새미몰",
+   "BusinessPartnerFullName": "온새미몰",
+   "SearchTerm1": "온새미몰",
+   "Customer": "1000020",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000020",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000020",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000020",
+     "AddressID": "1",
+     "CityName": "서울",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000020",
+    "CustomerName": "온새미몰",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000020",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT15"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000020",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     },
+     {
+      "Customer": "1000020",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 22,
+    "salesAmountKRW": 158483000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 33631400
+   }
+  },
+  {
+   "BusinessPartner": "1000021",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "도담마켓",
+   "BusinessPartnerFullName": "도담마켓",
+   "SearchTerm1": "도담마켓",
+   "Customer": "1000021",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000021",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000021",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000021",
+     "AddressID": "1",
+     "CityName": "성남",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000021",
+    "CustomerName": "도담마켓",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000021",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT15"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000021",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     },
+     {
+      "Customer": "1000021",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 15,
+    "salesAmountKRW": 91857000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 39386600
+   }
+  },
+  {
+   "BusinessPartner": "1000022",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "솔빛쇼핑",
+   "BusinessPartnerFullName": "솔빛쇼핑",
+   "SearchTerm1": "솔빛쇼핑",
+   "Customer": "1000022",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000022",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000022",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000022",
+     "AddressID": "1",
+     "CityName": "서울",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000022",
+    "CustomerName": "솔빛쇼핑",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000022",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT15"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000022",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     },
+     {
+      "Customer": "1000022",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 19,
+    "salesAmountKRW": 121052000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 35234100
+   }
+  },
+  {
+   "BusinessPartner": "1000023",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "라온스토어",
+   "BusinessPartnerFullName": "라온스토어",
+   "SearchTerm1": "라온스토어",
+   "Customer": "1000023",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000023",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000023",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000023",
+     "AddressID": "1",
+     "CityName": "고양",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000023",
+    "CustomerName": "라온스토어",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000023",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT15"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000023",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT15",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 15,
+    "salesAmountKRW": 76608000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 8902300
+   }
+  },
+  {
+   "BusinessPartner": "1000024",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "나래홈쇼핑",
+   "BusinessPartnerFullName": "나래홈쇼핑",
+   "SearchTerm1": "나래홈쇼핑",
+   "Customer": "1000024",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000024",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000024",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000024",
+     "AddressID": "1",
+     "CityName": "서울",
+     "Country": "KR"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000024",
+    "CustomerName": "나래홈쇼핑",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000024",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000024",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "10",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     },
+     {
+      "Customer": "1000024",
+      "SalesOrganization": "1100",
+      "DistributionChannel": "20",
+      "Division": "20",
+      "Currency": "KRW",
+      "CustomerPaymentTerms": "NT30",
+      "IncotermsClassification": "DAP",
+      "CustomerGroup": "02"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 12,
+    "salesAmountKRW": 82640000,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 34575200
+   }
+  },
+  {
+   "BusinessPartner": "1000030",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "Brightwell Home Inc.",
+   "BusinessPartnerFullName": "Brightwell Home Inc.",
+   "SearchTerm1": "BRIGHTWELL",
+   "Customer": "1000030",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000030",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000030",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000030",
+     "AddressID": "1",
+     "CityName": "Seattle",
+     "Country": "US"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000030",
+    "CustomerName": "Brightwell Home Inc.",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000030",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000030",
+      "SalesOrganization": "1200",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "USD",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "FOB",
+      "CustomerGroup": "03"
+     },
+     {
+      "Customer": "1000030",
+      "SalesOrganization": "1200",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "USD",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "FOB",
+      "CustomerGroup": "03"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 3,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 36545850
+   }
+  },
+  {
+   "BusinessPartner": "1000031",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "Kestrel Living Ltd.",
+   "BusinessPartnerFullName": "Kestrel Living Ltd.",
+   "SearchTerm1": "KESTREL LI",
+   "Customer": "1000031",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000031",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000031",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000031",
+     "AddressID": "1",
+     "CityName": "Leeds",
+     "Country": "GB"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000031",
+    "CustomerName": "Kestrel Living Ltd.",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000031",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000031",
+      "SalesOrganization": "1200",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "USD",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "FOB",
+      "CustomerGroup": "03"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 2,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 23068770
+   }
+  },
+  {
+   "BusinessPartner": "1000032",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "Mariposa Hogar S.A.",
+   "BusinessPartnerFullName": "Mariposa Hogar S.A.",
+   "SearchTerm1": "MARIPOSA H",
+   "Customer": "1000032",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000032",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000032",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000032",
+     "AddressID": "1",
+     "CityName": "Monterrey",
+     "Country": "MX"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000032",
+    "CustomerName": "Mariposa Hogar S.A.",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000032",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000032",
+      "SalesOrganization": "1200",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "USD",
+      "CustomerPaymentTerms": "NT60",
+      "IncotermsClassification": "FOB",
+      "CustomerGroup": "03"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 7,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 161066010
+   }
+  },
+  {
+   "BusinessPartner": "1000033",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "CUST",
+   "OrganizationBPName1": "Saigon Bloom Trading",
+   "BusinessPartnerFullName": "Saigon Bloom Trading",
+   "SearchTerm1": "SAIGON BLO",
+   "Customer": "1000033",
+   "Supplier": "",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "1000033",
+     "BusinessPartnerRole": "FLCU00"
+    },
+    {
+     "BusinessPartner": "1000033",
+     "BusinessPartnerRole": "FLCU01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "1000033",
+     "AddressID": "1",
+     "CityName": "Ho Chi Minh",
+     "Country": "VN"
+    }
+   ],
+   "to_Customer": {
+    "Customer": "1000033",
+    "CustomerName": "Saigon Bloom Trading",
+    "to_CustomerCompany": [
+     {
+      "Customer": "1000033",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "113100",
+      "PaymentTerms": "NT45"
+     }
+    ],
+    "to_CustomerSalesArea": [
+     {
+      "Customer": "1000033",
+      "SalesOrganization": "1200",
+      "DistributionChannel": "10",
+      "Division": "10",
+      "Currency": "USD",
+      "CustomerPaymentTerms": "NT45",
+      "IncotermsClassification": "FOB",
+      "CustomerGroup": "03"
+     },
+     {
+      "Customer": "1000033",
+      "SalesOrganization": "1200",
+      "DistributionChannel": "10",
+      "Division": "20",
+      "Currency": "USD",
+      "CustomerPaymentTerms": "NT45",
+      "IncotermsClassification": "FOB",
+      "CustomerGroup": "03"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 8,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 0,
+    "purchaseAmountKRW": 0,
+    "openReceivableKRW": 83728050
+   }
+  },
+  {
+   "BusinessPartner": "2000010",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "한별모터",
+   "BusinessPartnerFullName": "한별모터",
+   "SearchTerm1": "한별모터",
+   "Customer": "",
+   "Supplier": "2000010",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000010",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000010",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000010",
+     "AddressID": "1",
+     "CityName": "화성",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000010",
+    "SupplierName": "한별모터",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000010",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000010",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT30"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 16,
+    "purchaseAmountKRW": 104720000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000011",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "누리피씨비",
+   "BusinessPartnerFullName": "누리피씨비",
+   "SearchTerm1": "누리피씨비",
+   "Customer": "",
+   "Supplier": "2000011",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000011",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000011",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000011",
+     "AddressID": "1",
+     "CityName": "구미",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000011",
+    "SupplierName": "누리피씨비",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000011",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT45"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000011",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT45"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 36,
+    "purchaseAmountKRW": 133734000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000012",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "맑은센서",
+   "BusinessPartnerFullName": "맑은센서",
+   "SearchTerm1": "맑은센서",
+   "Customer": "",
+   "Supplier": "2000012",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000012",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000012",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000012",
+     "AddressID": "1",
+     "CityName": "성남",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000012",
+    "SupplierName": "맑은센서",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000012",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000012",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT30"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 32,
+    "purchaseAmountKRW": 89660000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000013",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "빛나전원",
+   "BusinessPartnerFullName": "빛나전원",
+   "SearchTerm1": "빛나전원",
+   "Customer": "",
+   "Supplier": "2000013",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000013",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000013",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000013",
+     "AddressID": "1",
+     "CityName": "안산",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000013",
+    "SupplierName": "빛나전원",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000013",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000013",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT30"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 32,
+    "purchaseAmountKRW": 54362000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000014",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "미래사출",
+   "BusinessPartnerFullName": "미래사출",
+   "SearchTerm1": "미래사출",
+   "Customer": "",
+   "Supplier": "2000014",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000014",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000014",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000014",
+     "AddressID": "1",
+     "CityName": "평택",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000014",
+    "SupplierName": "미래사출",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000014",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000014",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT60"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 27,
+    "purchaseAmountKRW": 64323000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000015",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "청정필터",
+   "BusinessPartnerFullName": "청정필터",
+   "SearchTerm1": "청정필터",
+   "Customer": "",
+   "Supplier": "2000015",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000015",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000015",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000015",
+     "AddressID": "1",
+     "CityName": "오산",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000015",
+    "SupplierName": "청정필터",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000015",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000015",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT30"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 31,
+    "purchaseAmountKRW": 176242000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000016",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "동방포장",
+   "BusinessPartnerFullName": "동방포장",
+   "SearchTerm1": "동방포장",
+   "Customer": "",
+   "Supplier": "2000016",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000016",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000016",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000016",
+     "AddressID": "1",
+     "CityName": "천안",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000016",
+    "SupplierName": "동방포장",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000016",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000016",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT30"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 25,
+    "purchaseAmountKRW": 21478000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000017",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "단단금속",
+   "BusinessPartnerFullName": "단단금속",
+   "SearchTerm1": "단단금속",
+   "Customer": "",
+   "Supplier": "2000017",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000017",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000017",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000017",
+     "AddressID": "1",
+     "CityName": "김천",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000017",
+    "SupplierName": "단단금속",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000017",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT45"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000017",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT45"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 33,
+    "purchaseAmountKRW": 114339000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000018",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "열정히터",
+   "BusinessPartnerFullName": "열정히터",
+   "SearchTerm1": "열정히터",
+   "Customer": "",
+   "Supplier": "2000018",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000018",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000018",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000018",
+     "AddressID": "1",
+     "CityName": "칠곡",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000018",
+    "SupplierName": "열정히터",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000018",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT30"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000018",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT30"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 28,
+    "purchaseAmountKRW": 123860000,
+    "openReceivableKRW": 0
+   }
+  },
+  {
+   "BusinessPartner": "2000019",
+   "BusinessPartnerCategory": "2",
+   "BusinessPartnerGrouping": "SUPL",
+   "OrganizationBPName1": "구미사출",
+   "BusinessPartnerFullName": "구미사출",
+   "SearchTerm1": "구미사출",
+   "Customer": "",
+   "Supplier": "2000019",
+   "to_BusinessPartnerRole": [
+    {
+     "BusinessPartner": "2000019",
+     "BusinessPartnerRole": "FLVN00"
+    },
+    {
+     "BusinessPartner": "2000019",
+     "BusinessPartnerRole": "FLVN01"
+    }
+   ],
+   "to_BusinessPartnerAddress": [
+    {
+     "BusinessPartner": "2000019",
+     "AddressID": "1",
+     "CityName": "구미",
+     "Country": "KR"
+    }
+   ],
+   "to_Supplier": {
+    "Supplier": "2000019",
+    "SupplierName": "구미사출",
+    "to_SupplierCompany": [
+     {
+      "Supplier": "2000019",
+      "CompanyCode": "1100",
+      "ReconciliationAccount": "211100",
+      "PaymentTerms": "NT60"
+     }
+    ],
+    "to_SupplierPurchasingOrg": [
+     {
+      "Supplier": "2000019",
+      "PurchasingOrganization": "1100",
+      "PurchaseOrderCurrency": "KRW",
+      "PaymentTerms": "NT60"
+     }
+    ]
+   },
+   "_stats": {
+    "salesOrders": 0,
+    "salesAmountKRW": 0,
+    "purchaseOrders": 30,
+    "purchaseAmountKRW": 71616000,
+    "openReceivableKRW": 0
+   }
+  }
+ ],
+ "_glNames": {
+  "110100": "보통예금",
+  "113100": "외상매출금",
+  "114100": "부가세대급금",
+  "121100": "원재료",
+  "121500": "반제품",
+  "122100": "제품",
+  "123100": "상품",
+  "151100": "기계장치",
+  "151900": "감가상각누계액-기계장치",
+  "152100": "비품",
+  "152900": "감가상각누계액-비품",
+  "211100": "외상매입금",
+  "211900": "GR/IR 정산",
+  "213100": "부가세예수금",
+  "253000": "미지급급여",
+  "310000": "자본금",
+  "399900": "기초재고 이관",
+  "410000": "제품매출",
+  "411000": "상품매출",
+  "510000": "제품매출원가",
+  "511000": "상품매출원가",
+  "520100": "원재료비 (생산 투입)",
+  "520900": "생산 입고 대체",
+  "520950": "생산오더 정산",
+  "531000": "생산 차이",
+  "532000": "구매 가격차이",
+  "610000": "급여",
+  "620000": "감가상각비",
+  "630000": "전력·수도비",
+  "640000": "임차료",
+  "942000": "관리비 배부",
+  "943100": "조립 작업",
+  "943200": "검사 작업"
+ }
+}

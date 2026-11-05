@@ -1,0 +1,183 @@
+<mvc:View controllerName="gaon.sojson.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    core:require="{
+        formatter: 'gaon/sojson/model/formatter',
+        DateType: 'sap/ui/model/type/Date',
+        CurrencyType: 'sap/ui/model/type/Currency'
+    }">
+    <Page id="detailPage" title="{i18n>detailTitle}" showNavButton="true" navButtonPress=".onNavBack" enableScrolling="false">
+        <uxap:ObjectPageLayout id="objectPage" showTitleInHeaderContent="true" upperCaseAnchorBar="false">
+            <uxap:headerTitle>
+                <uxap:ObjectPageDynamicHeaderTitle>
+                    <uxap:heading>
+                        <Title text="판매오더 {SalesOrder}" wrapping="true" />
+                    </uxap:heading>
+                    <uxap:expandedContent>
+                        <Text text="{ parts: [{ path: 'SoldToParty' }, { path: 'cust>/' }], formatter: 'formatter.customerName' } ({SoldToParty}) · 고객 참조 {PurchaseOrderByCustomer}" />
+                    </uxap:expandedContent>
+                    <uxap:snappedContent>
+                        <Text text="{ parts: [{ path: 'SoldToParty' }, { path: 'cust>/' }], formatter: 'formatter.customerName' }" />
+                    </uxap:snappedContent>
+                </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+
+            <uxap:headerContent>
+                <FlexBox wrap="Wrap" alignItems="Start">
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Label text="순금액" />
+                    <ObjectNumber class="gaonBig"
+                        number="{ parts: [{ path: 'TotalNetAmount' }, { path: 'TransactionCurrency' }], type: 'CurrencyType', formatOptions: { showMeasure: false } }"
+                        unit="{TransactionCurrency}" emphasized="true" />
+                </VBox>
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Label text="처리 상태" />
+                    <ObjectStatus text="{ path: 'OverallSDProcessStatus', formatter: 'formatter.statusText' }"
+                        state="{ path: 'OverallSDProcessStatus', formatter: 'formatter.statusState' }" />
+                    <Label text="납품 상태" class="sapUiTinyMarginTop" />
+                    <ObjectStatus text="{ path: 'OverallDeliveryStatus', formatter: 'formatter.statusText' }"
+                        state="{ path: 'OverallDeliveryStatus', formatter: 'formatter.statusState' }" />
+                </VBox>
+                <VBox class="sapUiSmallMarginBottom">
+                    <Label text="생성일" />
+                    <Text text="{ path: 'CreationDate', type: 'DateType', formatOptions: { source: { pattern: 'yyyy-MM-dd' }, style: 'medium' } }" />
+                    <Label text="희망 납기" class="sapUiTinyMarginTop" />
+                    <Text text="{ path: 'RequestedDeliveryDate', type: 'DateType', formatOptions: { source: { pattern: 'yyyy-MM-dd' }, style: 'medium' } }" />
+                </VBox>
+                </FlexBox>
+            </uxap:headerContent>
+
+            <uxap:sections>
+                <uxap:ObjectPageSection id="secSalesArea" title="{i18n>secSalesArea}" titleUppercase="false">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                            <uxap:blocks>
+                                <form:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="3" editable="false">
+                                    <Label text="판매문서 유형" />
+                                    <Text text="{ parts: [{ path: 'SalesOrderType' }, { path: 'txt>/auart' }], formatter: 'formatter.codeText' }" />
+                                    <Label text="판매조직" />
+                                    <Text text="{ parts: [{ path: 'SalesOrganization' }, { path: 'txt>/vkorg' }], formatter: 'formatter.codeText' }" />
+                                    <Label text="유통경로" />
+                                    <Text text="{ parts: [{ path: 'DistributionChannel' }, { path: 'txt>/vtweg' }], formatter: 'formatter.codeText' }" />
+                                    <Label text="제품군" />
+                                    <Text text="{ parts: [{ path: 'OrganizationDivision' }, { path: 'txt>/spart' }], formatter: 'formatter.codeText' }" />
+                                    <Label text="고객 참조 (고객 PO)" />
+                                    <Text text="{PurchaseOrderByCustomer}" />
+                                    <Label text="문서 일자" />
+                                    <Text text="{ path: 'SalesOrderDate', type: 'DateType', formatOptions: { source: { pattern: 'yyyy-MM-dd' }, style: 'medium' } }" />
+                                    <Label text="지급조건" />
+                                    <Text text="{ parts: [{ path: 'CustomerPaymentTerms' }, { path: 'txt>/zterm' }], formatter: 'formatter.codeText' }" />
+                                    <Label text="인코텀즈" />
+                                    <Text text="{ parts: [{ path: 'IncotermsClassification' }, { path: 'txt>/inco' }], formatter: 'formatter.codeText' }" />
+                                </form:SimpleForm>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+
+                <uxap:ObjectPageSection id="secItems" title="{i18n>secItems}" titleUppercase="false">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                            <uxap:blocks>
+                                <!-- [JSON] to_Item은 판매오더 객체 안에 들어 있는 배열입니다 -->
+                                <Table id="itemTable" items="{to_Item}">
+                                    <columns>
+                                        <Column width="5rem"><Text text="아이템" /></Column>
+                                        <Column><Text text="자재" /></Column>
+                                        <Column hAlign="End"><Text text="주문 수량" /></Column>
+                                        <Column minScreenWidth="Tablet" demandPopin="true"><Text text="플랜트" /></Column>
+                                        <Column minScreenWidth="Tablet" demandPopin="true"><Text text="품목 범주" /></Column>
+                                        <Column hAlign="End"><Text text="순금액" /></Column>
+                                        <Column minScreenWidth="Tablet" demandPopin="true"><Text text="처리 상태" /></Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{SalesOrderItem}" />
+                                                <ObjectIdentifier title="{Material}" text="{SalesOrderItemText}" />
+                                                <ObjectNumber number="{RequestedQuantity}" unit="{RequestedQuantityUnit}" />
+                                                <Text text="{ parts: [{ path: 'ProductionPlant' }, { path: 'txt>/plant' }], formatter: 'formatter.codeText' }" />
+                                                <Text text="{ parts: [{ path: 'SalesOrderItemCategory' }, { path: 'txt>/pstyv' }], formatter: 'formatter.codeText' }" />
+                                                <ObjectNumber
+                                                    number="{ parts: [{ path: 'NetAmount' }, { path: 'TransactionCurrency' }], type: 'CurrencyType', formatOptions: { showMeasure: false } }"
+                                                    unit="{TransactionCurrency}" />
+                                                <ObjectStatus text="{ path: 'SDProcessStatus', formatter: 'formatter.statusText' }"
+                                                    state="{ path: 'SDProcessStatus', formatter: 'formatter.statusState' }" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+
+                <uxap:ObjectPageSection id="secFlow" title="{i18n>secFlow}" titleUppercase="false">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="{i18n>flowNote}" type="Information" showIcon="true" class="sapUiSmallMarginBottom" />
+                                    <Table id="flowTable" items="{to_SubsequentProcFlowDoc}" noDataText="아직 후속 문서가 없습니다 (출하 전)">
+                                        <columns>
+                                            <Column><Text text="후속 문서" /></Column>
+                                            <Column><Text text="범주 코드" /></Column>
+                                            <Column><Text text="생성일" /></Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <ObjectIdentifier title="{SubsequentDocument}"
+                                                        text="{ parts: [{ path: 'SubsequentDocumentCategory' }, { path: 'txt>/docCat' }], formatter: 'formatter.codeText' }" />
+                                                    <core:Icon src="{ path: 'SubsequentDocumentCategory', formatter: 'formatter.docCategoryIcon' }" />
+                                                    <Text text="{ path: 'CreationDate', type: 'DateType', formatOptions: { source: { pattern: 'yyyy-MM-dd' }, style: 'medium' } }" />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </VBox>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+
+                <uxap:ObjectPageSection id="secAcc" title="{i18n>secAcc}" titleUppercase="false">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="{i18n>accNote}" type="Warning" showIcon="true" class="sapUiSmallMarginBottom" />
+                                    <Table id="accTable" items="{view>/acc}" noDataText="아직 회계 전표가 없습니다">
+                                        <columns>
+                                            <Column><Text text="구분" /></Column>
+                                            <Column><Text text="전표 번호" /></Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true"><Text text="전표 유형" /></Column>
+                                            <Column minScreenWidth="Tablet" demandPopin="true"><Text text="전기일" /></Column>
+                                            <Column hAlign="End"><Text text="금액 (차변 합계)" /></Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem type="Active" press=".onShowLines">
+                                                <cells>
+                                                    <Text text="{view>kind}" />
+                                                    <ObjectIdentifier title="{view>BELNR}" titleActive="false" />
+                                                    <Text text="{view>BLART}" />
+                                                    <Text text="{ path: 'view>BUDAT', type: 'DateType', formatOptions: { source: { pattern: 'yyyy-MM-dd' }, style: 'medium' } }" />
+                                                    <ObjectNumber
+                                                        number="{ parts: [{ path: 'view>amount' }, { path: 'view>currency' }], type: 'CurrencyType', formatOptions: { showMeasure: false } }"
+                                                        unit="{view>currency}" />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </VBox>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+        </uxap:ObjectPageLayout>
+    </Page>
+</mvc:View>

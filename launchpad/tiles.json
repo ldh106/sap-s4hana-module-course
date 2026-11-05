@@ -1,0 +1,13 @@
+{
+ "company": "가온전자(주)",
+ "salesOrders": 237,
+ "businessPartners": 29,
+ "customers": 19,
+ "suppliers": 10,
+ "journalLines": 8421,
+ "journalEntries": 2002,
+ "period": [
+  "2026-08-03",
+  "2026-10-30"
+ ]
+}

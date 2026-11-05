@@ -1,0 +1,98 @@
+<mvc:View controllerName="gaon.je.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    core:require="{ formatter: 'gaon/je/model/formatter' }">
+    <f:DynamicPage id="page" fitContent="true" headerExpanded="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>title}" />
+                </f:heading>
+                <f:expandedContent>
+                    <Text text="{i18n>subtitle}" />
+                </f:expandedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <HBox wrap="Wrap" alignItems="End">
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="회계 기간 (POPER)" labelFor="selPeriod" />
+                        <Select id="selPeriod" width="11rem" change=".onFilter">
+                            <core:Item key="" text="전체" />
+                            <core:Item key="007" text="007 · 기초 이관" />
+                            <core:Item key="008" text="008 · 8월" />
+                            <core:Item key="009" text="009 · 9월" />
+                            <core:Item key="010" text="010 · 10월" />
+                        </Select>
+                    </VBox>
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="전표 유형 (BLART)" labelFor="selType" />
+                        <Select id="selType" width="14rem" change=".onFilter" items="{view>/types}">
+                            <core:Item key="{view>key}" text="{view>text}" />
+                        </Select>
+                    </VBox>
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="G/L 계정 (RACCT)" labelFor="cbAcct" />
+                        <ComboBox id="cbAcct" width="16rem" placeholder="전체" selectionChange=".onFilter" items="{view>/accounts}">
+                            <core:Item key="{view>key}" text="{view>text}" />
+                        </ComboBox>
+                    </VBox>
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="원가센터 (RCNTR)" labelFor="selCc" />
+                        <Select id="selCc" width="12rem" change=".onFilter" items="{view>/costCenters}">
+                            <core:Item key="{view>key}" text="{view>text}" />
+                        </Select>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="전표 번호 · 참조 문서 · 텍스트" labelFor="search" />
+                        <SearchField id="search" width="16rem" search=".onFilter" />
+                    </VBox>
+                </HBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <!-- 그리드 표: 보이는 행만 그리므로 8천 줄도 가볍습니다. rows 바인딩 -->
+            <t:Table id="jeTable" rows="{ path: '/ACDOCA' }" selectionMode="None" rowMode="Auto" enableCellFilter="true">
+                <t:extension>
+                    <OverflowToolbar>
+                        <Title text="{view>/title}" level="H2" />
+                        <ToolbarSpacer />
+                        <ObjectStatus title="차변 합계" text="{view>/debit}" />
+                        <ObjectStatus title="대변 합계" text="{view>/credit}" class="sapUiSmallMarginBegin" />
+                        <ObjectStatus text="{view>/balanceText}" state="{view>/balanceState}" icon="{view>/balanceIcon}" class="sapUiSmallMarginBegin" />
+                    </OverflowToolbar>
+                </t:extension>
+                <t:columns>
+                    <t:Column width="8rem" sortProperty="BELNR">
+                        <Label text="전표 번호" />
+                        <t:template><Link text="{BELNR}" press=".onOpenDoc" /></t:template>
+                    </t:Column>
+                    <t:Column width="4.5rem"><Label text="라인" /><t:template><Text text="{DOCLN}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="5rem" sortProperty="BLART"><Label text="유형" /><t:template><Text text="{BLART}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="7rem" sortProperty="BUDAT"><Label text="전기일" /><t:template><Text text="{BUDAT}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="14rem" sortProperty="RACCT">
+                        <Label text="G/L 계정" />
+                        <t:template><Text text="{ parts: [{ path: 'RACCT' }, { path: '/GL' }], formatter: 'formatter.codeText' }" wrapping="false" /></t:template>
+                    </t:Column>
+                    <t:Column width="6rem"><Label text="차/대" /><t:template><Text text="{ path: 'DRCRK', formatter: 'formatter.drcr' }" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="9rem" hAlign="End" sortProperty="HSL">
+                        <Label text="금액 (HSL)" />
+                        <t:template><Text text="{ path: 'HSL', formatter: 'formatter.signedAmount' }" wrapping="false" /></t:template>
+                    </t:Column>
+                    <t:Column width="10rem"><Label text="원가센터" /><t:template><Text text="{ parts: [{ path: 'RCNTR' }, { path: '/CC' }], formatter: 'formatter.codeText' }" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="7rem"><Label text="손익센터" /><t:template><Text text="{PRCTR}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="7rem"><Label text="고객" /><t:template><Text text="{KUNNR}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="7rem"><Label text="공급업체" /><t:template><Text text="{LIFNR}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="6rem"><Label text="자재" /><t:template><Text text="{MATNR}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="7rem"><Label text="오더" /><t:template><Text text="{AUFNR}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="10rem"><Label text="참조 문서" /><t:template><Text text="{AWTYP} {AWREF}" wrapping="false" /></t:template></t:Column>
+                    <t:Column width="14rem"><Label text="텍스트" /><t:template><Text text="{SGTXT}" wrapping="false" /></t:template></t:Column>
+                </t:columns>
+            </t:Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

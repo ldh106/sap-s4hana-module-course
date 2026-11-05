@@ -1,0 +1,8 @@
+<mvc:View controllerName="gaon.bp.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    displayBlock="true"
+    height="100%">
+    <!-- 목록(왼쪽 열) + 상세(가운데 열). 라우터가 열에 뷰를 넣고, layout 값으로 열 너비를 바꿉니다 -->
+    <f:FlexibleColumnLayout id="fcl" layout="{app>/layout}" backgroundDesign="Solid" />
+</mvc:View>

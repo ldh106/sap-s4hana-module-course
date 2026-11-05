@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+# npm run start-local: SAPUI5 1.120 라이브러리를 npm에서 내려받아 씁니다 (인터넷 CDN 없이도 실행).
+specVersion: "4.0"
+metadata:
+  name: gaon.je
+type: application
+framework:
+  name: SAPUI5
+  version: 1.120.2
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: sap.f
+    - name: sap.ui.table
+    - name: sap.ui.layout
+    - name: sap.ushell
+    - name: themelib_sap_horizon
+server:
+  customMiddleware:
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        flp:
+          theme: sap_horizon

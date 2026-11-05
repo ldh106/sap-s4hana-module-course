@@ -1,0 +1,31 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    core:require="{ formatter: 'gaon/soodata/model/formatter' }">
+    <!-- 회계 전표 한 건의 라인. 컨트롤러가 bindElement로 view>/acc/n 을 붙입니다 -->
+    <Dialog id="linesDialog" title="회계 전표 {view>BELNR} · {view>kind}" contentWidth="36rem" resizable="true" draggable="true">
+        <content>
+            <Table items="{view>lines}">
+                <columns>
+                    <Column><Text text="G/L 계정" /></Column>
+                    <Column hAlign="End"><Text text="차변" /></Column>
+                    <Column hAlign="End"><Text text="대변" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{view>RACCT}" text="{view>name}" />
+                            <ObjectNumber visible="{= ${view>DRCRK} === 'S' }"
+                                number="{ path: 'view>HSL', formatter: 'formatter.amount' }" />
+                            <ObjectNumber visible="{= ${view>DRCRK} === 'H' }"
+                                number="{ path: 'view>HSL', formatter: 'formatter.amount' }" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <endButton>
+            <Button text="닫기" press=".onCloseLines" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가온전자 Fiori 런치패드 (교육용)</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+    </style>
+    <!-- 웹 버전: UI5를 OpenUI5 CDN(1.120 장기 유지보수 버전)에서 불러옵니다 -->
+    <script
+        id="sap-ui-bootstrap"
+        src="https://sdk.openui5.org/1.120/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-language="ko"
+        data-sap-ui-libs="sap.m,sap.f"
+        data-sap-ui-resource-roots='{ "gaon.launchpad": "./" }'
+        data-sap-ui-on-init="module:gaon/launchpad/home"
+        data-sap-ui-compat-version="edge"
+        data-sap-ui-async="true"
+    ></script>
+</head>
+<body class="sapUiBody" id="content"></body>
+</html>

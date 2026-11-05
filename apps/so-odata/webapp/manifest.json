@@ -1,0 +1,146 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "gaon.soodata",
+    "type": "application",
+    "i18n": {
+      "bundleUrl": "i18n/i18n.properties",
+      "supportedLocales": [
+        ""
+      ],
+      "fallbackLocale": ""
+    },
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/API_SALES_ORDER_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      },
+      "customers": {
+        "uri": "model/customers.json",
+        "type": "JSON"
+      },
+      "accounting": {
+        "uri": "model/accounting.json",
+        "type": "JSON"
+      },
+      "texts": {
+        "uri": "model/texts.json",
+        "type": "JSON"
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.uxap": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "gaon.soodata.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ],
+          "fallbackLocale": ""
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": false,
+        "settings": {
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Inline"
+        }
+      },
+      "cust": {
+        "dataSource": "customers"
+      },
+      "acc": {
+        "dataSource": "accounting"
+      },
+      "txt": {
+        "dataSource": "texts"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "gaon.soodata.view",
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "list",
+          "pattern": ":?query:",
+          "target": [
+            "list"
+          ]
+        },
+        {
+          "name": "detail",
+          "pattern": "orders/{salesOrder}",
+          "target": [
+            "detail"
+          ]
+        }
+      ],
+      "targets": {
+        "list": {
+          "id": "List",
+          "name": "List"
+        },
+        "detail": {
+          "id": "Detail",
+          "name": "Detail"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "gaon.soodata.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

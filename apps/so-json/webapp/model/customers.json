@@ -1,0 +1,97 @@
+{
+ "1000010": {
+  "name": "누리가전마트",
+  "city": "서울",
+  "country": "KR"
+ },
+ "1000011": {
+  "name": "다솜전자유통",
+  "city": "부산",
+  "country": "KR"
+ },
+ "1000012": {
+  "name": "바름리빙",
+  "city": "대구",
+  "country": "KR"
+ },
+ "1000013": {
+  "name": "새봄종합상사",
+  "city": "광주",
+  "country": "KR"
+ },
+ "1000014": {
+  "name": "가람홈플라자",
+  "city": "대전",
+  "country": "KR"
+ },
+ "1000015": {
+  "name": "푸른가전",
+  "city": "인천",
+  "country": "KR"
+ },
+ "1000016": {
+  "name": "한울전자상가",
+  "city": "수원",
+  "country": "KR"
+ },
+ "1000017": {
+  "name": "이음생활마트",
+  "city": "청주",
+  "country": "KR"
+ },
+ "1000018": {
+  "name": "모아리빙센터",
+  "city": "창원",
+  "country": "KR"
+ },
+ "1000019": {
+  "name": "하늘상사",
+  "city": "울산",
+  "country": "KR"
+ },
+ "1000020": {
+  "name": "온새미몰",
+  "city": "서울",
+  "country": "KR"
+ },
+ "1000021": {
+  "name": "도담마켓",
+  "city": "성남",
+  "country": "KR"
+ },
+ "1000022": {
+  "name": "솔빛쇼핑",
+  "city": "서울",
+  "country": "KR"
+ },
+ "1000023": {
+  "name": "라온스토어",
+  "city": "고양",
+  "country": "KR"
+ },
+ "1000024": {
+  "name": "나래홈쇼핑",
+  "city": "서울",
+  "country": "KR"
+ },
+ "1000030": {
+  "name": "Brightwell Home Inc.",
+  "city": "Seattle",
+  "country": "US"
+ },
+ "1000031": {
+  "name": "Kestrel Living Ltd.",
+  "city": "Leeds",
+  "country": "GB"
+ },
+ "1000032": {
+  "name": "Mariposa Hogar S.A.",
+  "city": "Monterrey",
+  "country": "MX"
+ },
+ "1000033": {
+  "name": "Saigon Bloom Trading",
+  "city": "Ho Chi Minh",
+  "country": "VN"
+ }
+}

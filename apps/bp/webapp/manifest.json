@@ -1,0 +1,53 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "gaon.bp",
+    "type": "application",
+    "i18n": { "bundleUrl": "i18n/i18n.properties", "supportedLocales": [""], "fallbackLocale": "" },
+    "applicationVersion": { "version": "1.0.0" },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "businessPartners": { "uri": "model/businessPartners.json", "type": "JSON" },
+      "texts": { "uri": "model/texts.json", "type": "JSON" }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": { "desktop": true, "tablet": true, "phone": true }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.2",
+      "libs": { "sap.m": {}, "sap.ui.core": {}, "sap.f": {}, "sap.uxap": {}, "sap.ui.layout": {} }
+    },
+    "contentDensities": { "compact": true, "cozy": true },
+    "models": {
+      "i18n": { "type": "sap.ui.model.resource.ResourceModel", "settings": { "bundleName": "gaon.bp.i18n.i18n", "supportedLocales": [""], "fallbackLocale": "" } },
+      "": { "dataSource": "businessPartners", "settings": { "defaultBindingMode": "OneWay" } },
+      "txt": { "dataSource": "texts" }
+    },
+    "resources": { "css": [ { "uri": "css/style.css" } ] },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "gaon.bp.view",
+        "controlId": "fcl",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [
+        { "name": "list", "pattern": ":?query:", "target": ["list"] },
+        { "name": "detail", "pattern": "bp/{partner}", "target": ["list", "detail"] }
+      ],
+      "targets": {
+        "list": { "id": "List", "name": "List", "controlAggregation": "beginColumnPages" },
+        "detail": { "id": "Detail", "name": "Detail", "controlAggregation": "midColumnPages" }
+      }
+    },
+    "rootView": { "viewName": "gaon.bp.view.App", "type": "XML", "id": "App", "async": true }
+  }
+}

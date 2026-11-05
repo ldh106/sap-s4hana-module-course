@@ -1,0 +1,66 @@
+<mvc:View controllerName="gaon.bp.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    core:require="{ formatter: 'gaon/bp/model/formatter' }">
+    <f:DynamicPage id="listPage" headerExpanded="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>listTitle}" />
+                </f:heading>
+                <f:expandedContent>
+                    <Text text="{i18n>listSubtitle}" />
+                </f:expandedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <HBox wrap="Wrap" alignItems="End">
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="{i18n>search}" labelFor="search" />
+                        <SearchField id="search" width="16rem" search=".onFilter" liveChange=".onFilter" />
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="역할로 거르기" labelFor="selKind" />
+                        <SegmentedButton id="selKind" width="16rem" selectedKey="" selectionChange=".onFilter">
+                            <items>
+                                <SegmentedButtonItem key="" text="{i18n>all}" />
+                                <SegmentedButtonItem key="C" text="{i18n>customer}" />
+                                <SegmentedButtonItem key="S" text="{i18n>supplier}" />
+                            </items>
+                        </SegmentedButton>
+                    </VBox>
+                </HBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <!-- contextualWidth="Auto": 화면이 아니라 표 자신의 너비를 보고 열을 숨깁니다 (2열 화면에서 왼쪽 열이 좁을 때) -->
+            <Table id="bpTable" contextualWidth="Auto" sticky="ColumnHeaders,HeaderToolbar" updateFinished=".onUpdateFinished"
+                items="{ path: '/A_BusinessPartner', sorter: { path: 'BusinessPartner' } }">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="{view>/tableTitle}" level="H2" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column><Text text="BP" /></Column>
+                    <Column minScreenWidth="Tablet"><Text text="그룹핑" /></Column>
+                    <Column minScreenWidth="Tablet"><Text text="역할" /></Column>
+                    <Column minScreenWidth="Desktop"><Text text="도시" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press=".onPress">
+                        <cells>
+                            <ObjectIdentifier title="{OrganizationBPName1}" text="{BusinessPartner}" />
+                            <Text text="{ path: 'BusinessPartnerGrouping', formatter: 'formatter.groupingText' }" />
+                            <Text text="{ path: 'to_BusinessPartnerRole', formatter: 'formatter.roles' }" />
+                            <Text text="{ path: 'to_BusinessPartnerAddress', formatter: 'formatter.city' }" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

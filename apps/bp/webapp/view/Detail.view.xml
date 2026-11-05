@@ -1,0 +1,218 @@
+<mvc:View controllerName="gaon.bp.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    core:require="{ formatter: 'gaon/bp/model/formatter' }">
+    <uxap:ObjectPageLayout id="objectPage" showTitleInHeaderContent="true" upperCaseAnchorBar="false">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:heading>
+                    <Title text="{BusinessPartnerFullName}" wrapping="true" />
+                </uxap:heading>
+                <uxap:expandedContent>
+                    <Text text="BP {BusinessPartner} · { path: 'BusinessPartnerGrouping', formatter: 'formatter.groupingText' }" />
+                </uxap:expandedContent>
+                <uxap:snappedContent>
+                    <Text text="BP {BusinessPartner}" />
+                </uxap:snappedContent>
+                <uxap:navigationActions>
+                    <OverflowToolbarButton type="Transparent" icon="sap-icon://decline" tooltip="닫기" press=".onClose" />
+                </uxap:navigationActions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <FlexBox wrap="Wrap" alignItems="Start">
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Label text="BP 범주" />
+                    <Text text="{ path: 'BusinessPartnerCategory', formatter: 'formatter.categoryText' }" />
+                    <Label text="역할" class="sapUiTinyMarginTop" />
+                    <Text text="{ path: 'to_BusinessPartnerRole', formatter: 'formatter.roles' }" />
+                </VBox>
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Label text="연결된 고객 번호 (CVI)" />
+                    <Text text="{= ${Customer} || '없음' }" />
+                    <Label text="연결된 공급업체 번호 (CVI)" class="sapUiTinyMarginTop" />
+                    <Text text="{= ${Supplier} || '없음' }" />
+                </VBox>
+            </FlexBox>
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection id="secGeneral" title="일반 데이터" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <form:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2" editable="false">
+                                <Label text="BP 번호" />
+                                <Text text="{BusinessPartner}" />
+                                <Label text="BP 범주" />
+                                <Text text="{ path: 'BusinessPartnerCategory', formatter: 'formatter.categoryText' }" />
+                                <Label text="그룹핑" />
+                                <Text text="{ path: 'BusinessPartnerGrouping', formatter: 'formatter.groupingText' }" />
+                                <Label text="이름 (조직 이름 1)" />
+                                <Text text="{OrganizationBPName1}" />
+                                <Label text="검색어 1" />
+                                <Text text="{SearchTerm1}" />
+                                <Label text="주소" />
+                                <Text text="{ path: 'to_BusinessPartnerAddress', formatter: 'formatter.city' }" />
+                            </form:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection id="secRoles" title="역할" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <VBox>
+                                <MessageStrip type="Information" showIcon="true" class="sapUiSmallMarginBottom"
+                                    text="역할을 붙이면 그 역할의 데이터 화면이 열립니다. FLCU00·FLCU01이 붙으면 고객, FLVN00·FLVN01이 붙으면 공급업체가 됩니다." />
+                                <Table items="{to_BusinessPartnerRole}">
+                                    <columns>
+                                        <Column width="8rem"><Text text="역할 코드" /></Column>
+                                        <Column><Text text="뜻 (여는 데이터)" /></Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <ObjectIdentifier title="{BusinessPartnerRole}" />
+                                                <Text text="{ path: 'BusinessPartnerRole', formatter: 'formatter.roleText' }" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- 고객 역할이 있을 때만 보이는 섹션 -->
+            <uxap:ObjectPageSection id="secCustomer" title="고객 데이터" titleUppercase="false" visible="{= !!${Customer} }">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="회사코드 데이터 (FLCU00)" titleUppercase="false">
+                        <uxap:blocks>
+                            <Table items="{to_Customer/to_CustomerCompany}">
+                                <columns>
+                                    <Column><Text text="회사코드" /></Column>
+                                    <Column><Text text="조정계정" /></Column>
+                                    <Column><Text text="지급조건" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{CompanyCode}" />
+                                            <Text text="{ parts: [{ path: 'ReconciliationAccount' }, { path: '/_glNames' }], formatter: 'formatter.codeText' }" />
+                                            <Text text="{ parts: [{ path: 'PaymentTerms' }, { path: 'txt>/zterm' }], formatter: 'formatter.codeText' }" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="판매 영역 데이터 (FLCU01)" titleUppercase="false">
+                        <uxap:blocks>
+                            <Table items="{to_Customer/to_CustomerSalesArea}">
+                                <columns>
+                                    <Column><Text text="판매조직" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="유통경로" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="제품군" /></Column>
+                                    <Column><Text text="통화" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="지급조건" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="인코텀즈" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{ parts: [{ path: 'SalesOrganization' }, { path: 'txt>/vkorg' }], formatter: 'formatter.codeText' }" />
+                                            <Text text="{ parts: [{ path: 'DistributionChannel' }, { path: 'txt>/vtweg' }], formatter: 'formatter.codeText' }" />
+                                            <Text text="{ parts: [{ path: 'Division' }, { path: 'txt>/spart' }], formatter: 'formatter.codeText' }" />
+                                            <Text text="{Currency}" />
+                                            <Text text="{CustomerPaymentTerms}" />
+                                            <Text text="{IncotermsClassification}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- 공급업체 역할이 있을 때만 보이는 섹션 -->
+            <uxap:ObjectPageSection id="secSupplier" title="공급업체 데이터" titleUppercase="false" visible="{= !!${Supplier} }">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="회사코드 데이터 (FLVN00)" titleUppercase="false">
+                        <uxap:blocks>
+                            <Table items="{to_Supplier/to_SupplierCompany}">
+                                <columns>
+                                    <Column><Text text="회사코드" /></Column>
+                                    <Column><Text text="조정계정" /></Column>
+                                    <Column><Text text="지급조건" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{CompanyCode}" />
+                                            <Text text="{ parts: [{ path: 'ReconciliationAccount' }, { path: '/_glNames' }], formatter: 'formatter.codeText' }" />
+                                            <Text text="{ parts: [{ path: 'PaymentTerms' }, { path: 'txt>/zterm' }], formatter: 'formatter.codeText' }" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="구매조직 데이터 (FLVN01)" titleUppercase="false">
+                        <uxap:blocks>
+                            <Table items="{to_Supplier/to_SupplierPurchasingOrg}">
+                                <columns>
+                                    <Column><Text text="구매조직" /></Column>
+                                    <Column><Text text="구매오더 통화" /></Column>
+                                    <Column><Text text="지급조건" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{ parts: [{ path: 'PurchasingOrganization' }, { path: 'txt>/ekorg' }], formatter: 'formatter.codeText' }" />
+                                            <Text text="{PurchaseOrderCurrency}" />
+                                            <Text text="{ parts: [{ path: 'PaymentTerms' }, { path: 'txt>/zterm' }], formatter: 'formatter.codeText' }" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection id="secStats" title="거래 요약" titleUppercase="false">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <VBox>
+                                <MessageStrip type="Warning" showIcon="true" class="sapUiSmallMarginBottom"
+                                    text="이 요약(_stats)은 API_BUSINESS_PARTNER에 없는 교육용 값입니다. 실제로는 판매·구매·회계 쪽 데이터를 따로 조회해 계산합니다." />
+                                <form:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2" editable="false">
+                                    <Label text="판매오더" />
+                                    <Text text="{_stats/salesOrders}건" />
+                                    <Label text="판매 금액 (KRW 오더만)" />
+                                    <Text text="{ path: '_stats/salesAmountKRW', formatter: 'formatter.amount' } 원" />
+                                    <Label text="미결 채권 (기간 끝)" />
+                                    <Text text="{ path: '_stats/openReceivableKRW', formatter: 'formatter.amount' } 원" />
+                                    <Label text="구매오더" />
+                                    <Text text="{_stats/purchaseOrders}건" />
+                                    <Label text="구매 금액" />
+                                    <Text text="{ path: '_stats/purchaseAmountKRW', formatter: 'formatter.amount' } 원" />
+                                </form:SimpleForm>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

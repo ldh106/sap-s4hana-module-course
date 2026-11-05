@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    core:require="{ formatter: 'gaon/je/model/formatter' }">
+    <!-- 전표 한 건. 컨트롤러가 doc 모델에 헤더와 라인을 담아 엽니다 -->
+    <Dialog id="docDialog" title="회계 전표 {doc>/BELNR}" contentWidth="52rem" resizable="true" draggable="true">
+        <content>
+            <form:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="3" editable="false">
+                <Label text="회사코드 (RBUKRS)" />
+                <Text text="{doc>/RBUKRS}" />
+                <Label text="회계연도 (GJAHR)" />
+                <Text text="{doc>/GJAHR}" />
+                <Label text="전표 유형 (BLART)" />
+                <Text text="{doc>/BLART} {doc>/blartName}" />
+                <Label text="전기일 (BUDAT)" />
+                <Text text="{doc>/BUDAT}" />
+                <Label text="참조 문서 (AWTYP · AWREF)" />
+                <Text text="{doc>/AWTYP} {doc>/AWREF}" />
+                <Label text="헤더 텍스트 (BKPF-BKTXT)" />
+                <Text text="{doc>/BKTXT}" />
+            </form:SimpleForm>
+            <Table items="{doc>/lines}" class="sapUiSmallMarginTop">
+                <columns>
+                    <Column width="4rem"><Text text="라인" /></Column>
+                    <Column><Text text="G/L 계정" /></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="원가센터 · 오더" /></Column>
+                    <Column hAlign="End"><Text text="차변" /></Column>
+                    <Column hAlign="End"><Text text="대변" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{doc>DOCLN}" />
+                            <ObjectIdentifier title="{doc>RACCT}" text="{doc>name}" />
+                            <Text text="{doc>RCNTR} {doc>AUFNR}" />
+                            <Text text="{ parts: [{ path: 'doc>HSL' }, { path: 'doc>DRCRK' }], formatter: 'formatter.debit' }" />
+                            <Text text="{ parts: [{ path: 'doc>HSL' }, { path: 'doc>DRCRK' }], formatter: 'formatter.credit' }" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ObjectStatus text="차변 {doc>/debit} = 대변 {doc>/credit}" state="{= ${doc>/balanced} ? 'Success' : 'Error' }"
+                    icon="{= ${doc>/balanced} ? 'sap-icon://accept' : 'sap-icon://error' }" />
+                <ToolbarSpacer />
+                <Button text="닫기" press=".onCloseDoc" />
+            </OverflowToolbar>
+        </footer>
+    </Dialog>
+</core:FragmentDefinition>

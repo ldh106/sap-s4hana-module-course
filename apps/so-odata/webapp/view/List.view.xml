@@ -1,0 +1,100 @@
+<mvc:View controllerName="gaon.soodata.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    core:require="{
+        formatter: 'gaon/soodata/model/formatter',
+        DateType: 'sap/ui/model/type/Date',
+        DateTimeType: 'sap/ui/model/odata/type/DateTime',
+        CurrencyType: 'sap/ui/model/type/Currency'
+    }">
+    <f:DynamicPage id="listPage" headerExpanded="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>listTitle}" />
+                </f:heading>
+                <f:expandedContent>
+                    <Text text="{i18n>listSubtitle}" />
+                </f:expandedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <HBox wrap="Wrap" alignItems="End">
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="{i18n>search}" labelFor="search" />
+                        <SearchField id="search" width="16rem" placeholder="{i18n>searchPh}" search=".onFilter" liveChange=".onLiveSearch" />
+                    </VBox>
+                    <VBox class="sapUiSmallMarginEnd sapUiTinyMarginBottom">
+                        <Label text="{i18n>salesOrg}" labelFor="selOrg" />
+                        <Select id="selOrg" width="12rem" change=".onFilter">
+                            <core:Item key="" text="{i18n>all}" />
+                            <core:Item key="1100" text="1100 국내영업" />
+                            <core:Item key="1200" text="1200 해외영업" />
+                        </Select>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="{i18n>status}" labelFor="selStatus" />
+                        <SegmentedButton id="selStatus" selectedKey="" selectionChange=".onFilter">
+                            <items>
+                                <SegmentedButtonItem key="" text="{i18n>all}" />
+                                <SegmentedButtonItem key="A" text="미처리" />
+                                <SegmentedButtonItem key="B" text="처리 중" />
+                                <SegmentedButtonItem key="C" text="완료" />
+                            </items>
+                        </SegmentedButton>
+                    </VBox>
+                </HBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table id="soTable"
+                growing="true"
+                growingThreshold="30"
+                growingScrollToLoad="true"
+                sticky="ColumnHeaders,HeaderToolbar"
+                updateFinished=".onUpdateFinished"
+                items="{
+                    path: '/A_SalesOrder',
+                    sorter: { path: 'SalesOrder', descending: true }
+                }">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title id="tableTitle" text="{view>/tableTitle}" level="H2" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="9rem"><Text text="{i18n>colOrder}" /></Column>
+                    <Column><Text text="{i18n>colCustomer}" /></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>colSalesOrg}" /></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>colCreated}" /></Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true"><Text text="{i18n>colReqDate}" /></Column>
+                    <Column hAlign="End"><Text text="{i18n>colAmount}" /></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>colStatus}" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press=".onPress">
+                        <cells>
+                            <ObjectIdentifier title="{SalesOrder}" text="{SalesOrderType}" />
+                            <ObjectIdentifier
+                                title="{ parts: [{ path: 'SoldToParty' }, { path: 'cust>/' }], formatter: 'formatter.customerName' }"
+                                text="{SoldToParty}" />
+                            <Text text="{ parts: [{ path: 'SalesOrganization' }, { path: 'txt>/vkorg' }], formatter: 'formatter.codeText' }" />
+                            <!-- [OData] Edm.DateTime 값은 JavaScript Date로 오므로 OData 타입(DateTime, displayFormat Date)을 씁니다 -->
+                            <Text text="{ path: 'CreationDate', type: 'DateTimeType', constraints: { displayFormat: 'Date' }, formatOptions: { style: 'medium' } }" />
+                            <Text text="{ path: 'RequestedDeliveryDate', type: 'DateTimeType', constraints: { displayFormat: 'Date' }, formatOptions: { style: 'medium' } }" />
+                            <ObjectNumber
+                                number="{ parts: [{ path: 'TotalNetAmount' }, { path: 'TransactionCurrency' }], type: 'CurrencyType', formatOptions: { showMeasure: false } }"
+                                unit="{TransactionCurrency}" />
+                            <ObjectStatus
+                                text="{ path: 'OverallSDProcessStatus', formatter: 'formatter.statusText' }"
+                                state="{ path: 'OverallSDProcessStatus', formatter: 'formatter.statusState' }" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
